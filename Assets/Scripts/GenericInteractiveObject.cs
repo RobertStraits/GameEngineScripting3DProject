@@ -2,18 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericInteractiveObject : MonoBehaviour
+public class GenericInteractiveObject : MonoBehaviour, IActivatable
 {
+    [SerializeField]
+    private string nameText = "Generic Interactive Object";
 
-	// Use this for initialization
-	void Start ()
+    public string NameText
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        get
+        {
+            return nameText;
+        }
+    }
+    public void DoActivate()
     {
-		
-	}
+        Debug.Log(transform.name + " was activated!");
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        DoActivate();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

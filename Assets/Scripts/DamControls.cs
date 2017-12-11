@@ -53,6 +53,7 @@ public class DamControls : MonoBehaviour, IActivatable
     void Start ()
     {
         playerInventory = FindObjectOfType<InventoryMenu>().PlayerInventory;
+        isLocked = key != null;
     }
 
     // Update is called once per frame
